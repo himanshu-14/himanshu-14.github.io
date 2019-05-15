@@ -5,8 +5,7 @@
   </head>
   <body>
     
-<h1>Himanshu Mittal's space on the Interwebs</h1>
-
+## Here's a list of posts on this website.
 <ul>
   {% for post in site.posts %}
     <li>
