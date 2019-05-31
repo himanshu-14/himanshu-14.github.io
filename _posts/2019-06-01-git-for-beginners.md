@@ -1,6 +1,6 @@
-#GIT VERSION CONTROL FOR ABSOLUTE BEGINNERS
+# GIT VERSION CONTROL FOR ABSOLUTE BEGINNERS
 
-##Let's get started
+## Let's get started
 People say git is an open source distributed version control system blah blah..
 But simply put git is a small applivation you install on your computer that can keep track of any changes in a folder of files.
 Download this small app from here depending upon your OS( Windows/Linux/Mac Os)
