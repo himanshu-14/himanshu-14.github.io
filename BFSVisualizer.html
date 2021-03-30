@@ -1,0 +1,195 @@
+<html>
+  <head>
+    <title>Array Visualizer</title>
+    <style>
+      .visited {
+        background-color: blue;
+        color: white;
+      }
+      .unseen {
+        background-color: yellow;
+        color: black;
+      }
+      .queued {
+        background-color: orange;
+      }
+      table {
+        height: 500px;
+        width: 500px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <script type="text/javascript">
+      class QueueWithLL {
+        constructor() {
+          this.head = null;
+          this.tail = null;
+        }
+        add(data) {
+          let nodeToAdd = new LLNode(data);
+          if (this.tail == null) {
+            this.head = nodeToAdd;
+            this.tail = nodeToAdd;
+          } else {
+            this.tail.next = nodeToAdd;
+            this.tail = nodeToAdd;
+          }
+        }
+        poll() {
+          if (this.head == null) return null;
+          let answer = null;
+          answer = this.head.data;
+          if (this.head == this.tail) {
+            this.head = null;
+            this.tail = null;
+          } else {
+            this.head = this.head.next;
+          }
+          return answer;
+        }
+        isEmpty() {
+          return this.head == null && this.tail == null;
+        }
+      }
+      class LLNode {
+        // constructor() {
+        //   this.next = null;
+        // }
+        constructor(data) {
+          this.data = data;
+          this.next = null;
+        }
+      }
+      class PayLoad {
+        constructor(i, j) {
+          this.i = i;
+          this.j = j;
+        }
+      }
+
+      // // fillArray(arr);
+      // function fillArray(arr) {
+      //   let numOfTimesToCall = arr.length * arr[0].length;
+      //   let count = 0;
+
+      //   let keepFilling = setInterval(() => {
+      //     console.log("setInterval called again");
+      //     count++;
+      //     if (count > numOfTimesToCall) {
+      //       console.log("setInterval called last time. clearing....");
+      //       clearInterval(keepFilling);
+      //       return;
+      //     }
+
+      //     let randRowNumber = 0;
+      //     let randColNumber = 0;
+      //     while (arr[randRowNumber][randColNumber]) {
+      //       randRowNumber = Math.floor(Math.random() * arr.length);
+      //       randColNumber = Math.floor(Math.random() * arr[0].length);
+      //     }
+      //     arr[randRowNumber][randColNumber] = 1;
+      //     renderArrayIn(arr, "root");
+      //   }, 500);
+      // }
+
+      function doBreadthFirstTraversal(arr,xStart,yStart) {
+        let numOfTimesToCall = arr.length * arr[0].length;
+        let count = 0;
+        let q = new QueueWithLL();
+        // let xStart=Math.floor(arr.length/2),yStart=Math.floor(arr[0].length/2);
+        q.add(new PayLoad(xStart, yStart));
+        arr[xStart][yStart] = 1;
+        renderArrayIn(arr, "root");
+        let performOp = setInterval(() => {
+          console.log("setInterval called again");
+          if (q.isEmpty()) {
+            console.log("setInterval called last time. clearing....");
+            clearInterval(performOp);
+            return;
+          }
+          let p = q.poll(); //remove from q
+          arr[p.i][p.j] = 2; //mark visited or mark *
+          let x = p.i - 1,
+            y = p.j;
+          if (x >= 0 && x < arr.length && y >= 0 && y < arr[0].length) {
+            if (arr[x][y] == 0) {
+              arr[x][y] = 1;
+              q.add(new PayLoad(x, y));
+            }
+          }
+          (x = p.i), (y = p.j + 1);
+          if (x >= 0 && x < arr.length && y >= 0 && y < arr[0].length) {
+            if (arr[x][y] == 0) {
+              arr[x][y] = 1;
+              q.add(new PayLoad(x, y));
+            }
+          }
+          (x = p.i + 1), (y = p.j);
+          if (x >= 0 && x < arr.length && y >= 0 && y < arr[0].length) {
+            if (arr[x][y] == 0) {
+              arr[x][y] = 1;
+              q.add(new PayLoad(x, y));
+            }
+          }
+          (x = p.i), (y = p.j - 1);
+          if (x >= 0 && x < arr.length && y >= 0 && y < arr[0].length) {
+            if (arr[x][y] == 0) {
+              arr[x][y] = 1;
+              q.add(new PayLoad(x, y));
+            }
+          }
+          renderArrayIn(arr, "root");
+        }, 2000);
+      }
+
+      function renderArrayIn(arr, elementId) {
+        let elToRenderIn = document.getElementById(elementId);
+        let htmlToRender = "<table>";
+        for (let i = 0; i < arr.length; i++) {
+          htmlToRender += "<tr>";
+          for (let j = 0; j < arr[0].length; j++) {
+            htmlToRender += `<td class=${getClass(arr[i][j])}>`;
+            // htmlToRender += arr[i][j];
+            htmlToRender += "</td>";
+          }
+          htmlToRender += "</tr>";
+        }
+        htmlToRender += "</table>";
+        elToRenderIn.innerHTML = htmlToRender;
+      }
+      function getClass(val) {
+        return val == 0 ? '"unseen"' : val == 1 ? '"queued"' : '"visited"';
+      }
+      function doBFSInGridFromCoords(arr){
+        let xStart=parseInt(document.getElementById("row").value);
+        let yStart=parseInt(document.getElementById("col").value);
+        doBreadthFirstTraversal(arr,xStart,yStart)
+      }
+    </script>
+    <div id="root"></div>
+    <label for="row">Row Index</label>
+    <input
+      type="number" max="2" min="0" id="row"      
+    />
+    <label for="col">Col Index</label>
+    <input
+      type="number" max="2" min="0" id="col"           
+    />
+    <input
+      type="button"
+      onclick="doBFSInGridFromCoords(arr);console.log('onclick called');"
+      value="Do a Breadth First Traversal"
+    />
+    <script>
+      let arr = [
+        [0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0],
+      ];
+
+      renderArrayIn(arr, "root");
+    </script>
+  </body>
+</html>
