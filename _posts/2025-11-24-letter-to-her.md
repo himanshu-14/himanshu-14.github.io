@@ -33,7 +33,8 @@ I acknwoledge it was a mistake, I called you up and tried to understand your per
 
 We met again Bangalore at Jagriti Theatre where after a month I saw you again wearing a blue and white dress as I waited outside the theatre
 You smiled at me from top of the staircase and somehow I again felt that she is here to stay in my life
-We sat and talked and met again, we got things even, you put back my number and since then I have adapted to your communication style, you have adapted to what I can feel bad about and we have been able to talk well
+We sat and talked and met again, we got things even, you put back my number and since then I have adapted to your communication
+style, you have adapted to what I can feel bad about and we have been able to talk well
 
 
 
@@ -42,20 +43,16 @@ We sat and talked and met again, we got things even, you put back my number and 
 
 
 Mishika's chubby bui who is the chaheeti of everyone in her family 
-I feel responsible to do justice to you and take care of you and be the best version of myself
+I feel responsible to do justice to you in this life and do the best I can to take care of you and be the best version of myself
 You inspire me to be my best and whatever you choose, I wish the best for you in life. 
 
---withion limited timeline move towards clarity, can meet max 1 or 2 times and talk it all out
+
+## What can we do next? 
+--Can we in a limited timeline move towards clarity, can meet max 1 or 2 times and talk it all out
 - else close this chapter forever, even if we haven't found other partners the option of coming back to this is closed for both of us as that will help us be certain and clear instead of living in limbo and doubt
 
 My introspection in this break-- 
 
-Family pressure, age, uncertainty led me to be a bit emotional
-Plus initial strangers so couldn't trust with texting disconnect
-Later realized she does use phone less and text less but we speak well on calls and the distrust removed
-New city new job no network here in Bangalore meant that you were my entire social network at that time, I thought I only needed a life partner but having a friend network living nearby, people to talk to in Hindi, travel with was not there
-So gradually built that out along with work and gym routines plus filling routine with other activities on weekend such as learning music and badminton 
-Bike trips and all
 
 And husband wife future together-- 
 If Delhi ncr living in Shivalik colony at family home, having posh areas Saket, green park etc nearby, could go to cult classes together
